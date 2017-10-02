@@ -8,7 +8,7 @@
 #---------------------------------------------------------------
 
 relPrime:
-  li 2
+  li 2		
   swap
 
   while:
@@ -43,7 +43,12 @@ gcd:
     dup2
     swap
     bgt cond2
-
+	swap
+	dup2
+	swap
+	sub
+	j next
+	
   cond2:
     dup2
     swap
