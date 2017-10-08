@@ -18,13 +18,13 @@
 # commands also work similarly.
 #---------------------------------------------------------------
 
-ifelse: pushi 5    # Push initial value of m
-        dup2       # Saving values on stack
-        dup2       # Stack is now m -> n -> m -> n
-        bne else   # Stack is now m -> n
-        swap       # Stack now n -> m
-        pop        # Stack is now m
-        jr         # Return with 1 return value in accordance with calling conventions
+ifelse: pushi 5      # Push initial value of m
+        dup2         # Saving values on stack
+        dup2         # Stack is now m -> n -> m -> n
+        bne   else   # Stack is now m -> n
+        swap         # Stack now n -> m
+        pop          # Stack is now m
+        jr           # Return with 1 return value in accordance with calling conventions
 
-else:   pop        # Stack is now n
-        jr         # Return with 1 return value in accordance with calling conventions
+else:   pop          # Stack is now n
+        jr           # Return with 1 return value in accordance with calling conventions

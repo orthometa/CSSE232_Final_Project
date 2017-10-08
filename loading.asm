@@ -7,5 +7,5 @@
 # assembly language.
 #---------------------------------------------------------------
 
-lw 0x1010   # Loads value at memory address 0x1010 and pushes it onto the stack
-            # Stack is 0(0x1010)
+lw  0x1010   # Loads value at memory address 0x1010 and pushes it onto the stack
+             # Stack is 0(0x1010)
