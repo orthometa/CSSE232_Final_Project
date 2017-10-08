@@ -1,4 +1,4 @@
-#---------------------------------------------------------------
+pop#---------------------------------------------------------------
 # @author: Ishan Saraf, Rahul Yarlagadda, John McClure, David Li
 # @date: October 2nd, 2017
 #
@@ -18,17 +18,17 @@
 #---------------------------------------------------------------
 
 loop:
-  li 0  # Loading initial value of count, stack is count -> n
+  pushi 0  # Loading initial value of count, stack is count -> n
 
   while:
     dup2  # Duplicating n, stack is n -> count -> n
-    li 0  # Comparator value, stack is 0 -> n -> count -> n
+    pushi 0  # Comparator value, stack is 0 -> n -> count -> n
     swap  # Correct order
     bgt exit  # Branch if n <= zero, stack is count -> n
     dup2  # Stack is n -> count -> n
     add   # count = count + i, stack is count -> n
     swap  # Stack is n -> count
-    li 1  # Decrement value, stack is 1 -> n -> count
+    pushi 1  # Decrement value, stack is 1 -> n -> count
     swap  # Correct order
     sub   # Decrement, stack is n - 1 -> count
     swap  # Correct order
@@ -36,5 +36,5 @@ loop:
 
   exit:
     swap  # Order for discard
-    drop  # Remove unecessary element
+    pop  # Remove unecessary element
     jr    # Return with 1 return value in accordance with calling conventions

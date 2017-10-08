@@ -19,14 +19,14 @@
 #---------------------------------------------------------------
 
 ifelse:
-  li 5    # Push initial value of m
+  pushi 5    # Push initial value of m
   dup2    # Saving values on stack
   dup2    # Stack is now m -> n -> m -> n
   bne else  # Stack is now m -> n
   swap      # Stack now n -> m
-  drop      # Stack is now m
+  pop      # Stack is now m
   jr        # Return with 1 return value in accordance with calling conventions
 
   else:
-    drop    # Stack is now n
+    pop    # Stack is now n
     jr      # Return with 1 return value in accordance with calling conventions
