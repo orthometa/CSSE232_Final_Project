@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,7 +12,7 @@ public class Assembler {
 	public static void main(String[] args) {
 		HashMap<String, Integer> labels = new HashMap<>();
 		//if (args.length == 0) return;
-		String fileName = "C:\\Users\\Rahul\\Google Drive\\CSSE232\\Project_Code\\Assembler\\src\\euclid.asm";
+		String fileName = "..\\ifelse.asm";
 		BufferedReader bufferedReader = null;
 		try {
             // FileReader reads text files in the default encoding.
