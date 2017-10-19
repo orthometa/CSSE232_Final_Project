@@ -1,5 +1,5 @@
 #---------------------------------------------------------------
-# @author: Ishan Saraf, Rahul Yarlagadda, John McClure, David pushi
+# @author: Ishan Saraf, Rahul Yarlagadda, John McClure, David Li
 # @date: October 2nd, 2017
 #
 # This file contains Euclid's algorithm to find relative primes
