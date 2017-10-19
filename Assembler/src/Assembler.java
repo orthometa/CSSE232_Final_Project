@@ -7,11 +7,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Assembler {
-	
-	
+
+
 	public static void main(String[] args) {
 		HashMap<String, Integer> labels = new HashMap<>();
-		//if (args.length == 0) return;
 		String fileName = "..\\ifelse.asm";
 		BufferedReader bufferedReader = null;
 		try {
@@ -27,30 +26,30 @@ public class Assembler {
 		String line = null;
 		try {
 			while((line = bufferedReader.readLine()) != null) {
-			    //Remove comments
+			  // Remove comments
 				if(line.contains("#")) {
 					line = line.substring(0, line.indexOf('#'));
 				}
 				if (line.trim().length() > 0) {
 					lines.add(line);
-				}			
+				}
 			}
 		} catch (IOException e) {
 			System.out.println("IO ERROR");
 			return;
 		}
 		ArrayList<String> memory = new ArrayList<>();
-		//Find labels and store memory addresses
+		// Find labels and store memory addresses
 		for (String ln : lines) {
-			
-			//Put labels in hashmap
+
+			// Put labels in hashmap
 			if (ln.contains(":")) {
 				String[] split = ln.split(":");
 				labels.put(split[0], memory.size()*2);
 				ln = split[1];
 			}
-			
-			//For pushi, lw, sw, split the argument into it's own address
+
+			// For pushi, lw, sw, split the argument into it's own address
 			if (ln.contains("pushi") || ln.contains("lw") || ln.contains("sw")) {
 				String[] parts = ln.split("\\s+");
 				for (int i = 0; i < parts.length; i++) {
@@ -61,10 +60,10 @@ public class Assembler {
 			}
 		}
 		StringBuilder program = new StringBuilder();
-		//Convert each memory address to machine code
+		// Convert each memory address to machine code
 		for (int i = 0; i < memory.size(); i++) {
 			String[] words = memory.get(i).split("\\s+");
-			//Remove blank first word
+			// Remove blank first word
 			if (words[0].isEmpty()) words = Arrays.copyOfRange(words, 1, words.length);
 			int instruction = 0;
 			if (Character.isDigit(words[0].charAt(0))) {
@@ -72,15 +71,15 @@ public class Assembler {
 			}
 			else {
 				int opcode = getOpcode(words[0]);
-				if (opcode == 0) { //A-type
+				if (opcode == 0) { // A-type
 					instruction = getFunc(words[0]);
-				} else if (opcode < 4) {//Branch instructions, B-type PC relative
-					int address = labels.get(words[1]); // Get address of branch destination
+				} else if (opcode < 4) {	// Branch instructions, B-type PC relative
+					int address = labels.get(words[1]); 	// Get address of branch destination
 					address = address - i*2;			// Subtract pc
 					address = address & 0x1FFF;			// Get bottom 13 bits of result
 					address = address >>> 1;			// Bit shift right once with zero extend
 					instruction = (opcode << 13) + address;
-				} else {//Jump instruction
+				} else {	// Jump instruction
 					int address = labels.get(words[1]);
 					address = address & 0x1FFF;			// Get bottom 13 bits of result
 					address = address >>> 1;			// Bit shift right once with zero extend
@@ -93,11 +92,11 @@ public class Assembler {
 			program.append("\n");
 		}
 		System.out.println(program.toString());
-		
-		
+
+
 	}
-	
-	
+
+	// parse opcodes to get instruction type or branch type
 	private static int getOpcode(String instr) {
 		switch(instr) {
 			case "beq": return 1;
@@ -108,7 +107,8 @@ public class Assembler {
 			default: return 0;
 		}
 	}
-	
+
+	// Parse func codes to get instruction for A-types
 	private static int getFunc(String instr) {
 		switch(instr) {
 			case "add": return 1;
@@ -122,7 +122,7 @@ public class Assembler {
 			case "lw": return 9;
 			case "sw": return 10;
 			case "pushi": return 11;
-			case "dup": return 12; 
+			case "dup": return 12;
 			case "dup2": return 13;
 			case "pop": return 14;
 			case "in": return 15;
