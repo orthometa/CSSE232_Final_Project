@@ -1,12 +1,12 @@
 set -tmpdir "xst/projnav.tmp"
 set -xsthdpdir "xst"
 run
--ifn SignExtender.prj
+-ifn shiftleft.prj
 -ifmt mixed
--ofn SignExtender
+-ofn shiftleft
 -ofmt NGC
 -p xc3s500e-4-fg320
--top SignExtender
+-top shiftleft
 -opt_mode Speed
 -opt_level 1
 -iuc NO
@@ -42,7 +42,7 @@ run
 -async_to_sync NO
 -mult_style Auto
 -iobuf YES
--max_fanout 100000
+-max_fanout 500
 -bufg 24
 -register_duplication YES
 -register_balancing No

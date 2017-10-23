@@ -3,16 +3,16 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.19 secs
  
---> Reading design: SignExtender.prj
+--> Reading design: shiftleft.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -35,17 +35,17 @@ TABLE OF CONTENTS
 *                      Synthesis Options Summary                        *
 =========================================================================
 ---- Source Parameters
-Input File Name                    : "SignExtender.prj"
+Input File Name                    : "shiftleft.prj"
 Input Format                       : mixed
 Ignore Synthesis Constraint File   : NO
 
 ---- Target Parameters
-Output File Name                   : "SignExtender"
+Output File Name                   : "shiftleft"
 Output Format                      : NGC
 Target Device                      : xc3s500e-4-fg320
 
 ---- Source Options
-Top Module Name                    : SignExtender
+Top Module Name                    : shiftleft
 Automatic FSM Extraction           : YES
 FSM Encoding Algorithm             : Auto
 Safe Implementation                : No
@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 100000
+Global Maximum Fanout              : 500
 Add Generic Clock Buffer(BUFG)     : 24
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -104,25 +104,25 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling verilog file "SignExtender.v" in library work
-Module <SignExtender> compiled
+Compiling verilog file "shiftleft.v" in library work
+Module <shiftleft> compiled
 No errors in compilation
-Analysis of file <"SignExtender.prj"> succeeded.
+Analysis of file <"shiftleft.prj"> succeeded.
  
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for module <SignExtender> in library <work>.
+Analyzing hierarchy for module <shiftleft> in library <work>.
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing top module <SignExtender>.
-WARNING:Xst:905 - "SignExtender.v" line 25: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+Analyzing top module <shiftleft>.
+WARNING:Xst:905 - "shiftleft.v" line 25: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <in>
-Module <SignExtender> is correct for synthesis.
+Module <shiftleft> is correct for synthesis.
  
 
 =========================================================================
@@ -131,9 +131,9 @@ Module <SignExtender> is correct for synthesis.
 
 Performing bidirectional port resolution...
 
-Synthesizing Unit <SignExtender>.
-    Related source file is "SignExtender.v".
-Unit <SignExtender> synthesized.
+Synthesizing Unit <shiftleft>.
+    Related source file is "shiftleft.v".
+Unit <shiftleft> synthesized.
 
 
 =========================================================================
@@ -157,11 +157,11 @@ Found no macro
 *                         Low Level Synthesis                           *
 =========================================================================
 
-Optimizing unit <SignExtender> ...
+Optimizing unit <shiftleft> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block SignExtender, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block shiftleft, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -186,19 +186,21 @@ Partition Implementation Status
 *                            Final Report                               *
 =========================================================================
 Final Results
-RTL Top Level Output File Name     : SignExtender.ngr
-Top Level Output File Name         : SignExtender
+RTL Top Level Output File Name     : shiftleft.ngr
+Top Level Output File Name         : shiftleft
 Output Format                      : NGC
 Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 29
+# IOs                              : 25
 
 Cell Usage :
-# IO Buffers                       : 29
-#      IBUF                        : 13
-#      OBUF                        : 16
+# BELS                             : 1
+#      GND                         : 1
+# IO Buffers                       : 25
+#      IBUF                        : 12
+#      OBUF                        : 13
 =========================================================================
 
 Device utilization summary:
@@ -207,8 +209,8 @@ Device utilization summary:
 Selected Device : 3s500efg320-4 
 
  Number of Slices:                        0  out of   4656     0%  
- Number of IOs:                          29
- Number of bonded IOBs:                  29  out of    232    12%  
+ Number of IOs:                          25
+ Number of bonded IOBs:                  25  out of    232    10%  
 
 ---------------------------
 Partition Resource Summary:
@@ -241,7 +243,7 @@ Speed Grade: -4
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 5.077ns
+   Maximum combinational path delay: 4.910ns
 
 Timing Detail:
 --------------
@@ -249,31 +251,31 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 16 / 16
+  Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
-Delay:               5.077ns (Levels of Logic = 2)
-  Source:            in<12> (PAD)
-  Destination:       out<15> (PAD)
+Delay:               4.910ns (Levels of Logic = 2)
+  Source:            in<11> (PAD)
+  Destination:       out<12> (PAD)
 
-  Data Path: in<12> to out<15>
+  Data Path: in<11> to out<12>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.218   0.587  in_12_IBUF (out_12_OBUF)
-     OBUF:I->O                 3.272          out_15_OBUF (out<15>)
+     IBUF:I->O             1   1.218   0.420  in_11_IBUF (out_12_OBUF)
+     OBUF:I->O                 3.272          out_12_OBUF (out<12>)
     ----------------------------------------
-    Total                      5.077ns (4.490ns logic, 0.587ns route)
-                                       (88.4% logic, 11.6% route)
+    Total                      4.910ns (4.490ns logic, 0.420ns route)
+                                       (91.4% logic, 8.6% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.17 secs
+Total CPU time to Xst completion: 9.77 secs
  
 --> 
 
-Total memory usage is 290124 kilobytes
+Total memory usage is 290144 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Rahul/Google Drive/CSSE232/Project_Code/ShiftLeft/sl16b.xst" -ofn "C:/Users/Rahul/Google Drive/CSSE232/Project_Code/ShiftLeft/sl16b.syr" 
