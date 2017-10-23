@@ -1,0 +1,8 @@
+add instance iddr2 1088 1232 R0 -sn=1
+select figure at 1518 1604 8 -branches -sn=1
+select figure at 1294 1137 8 -branches -sn=1
+delete selection -sn=1
+add instance ld 1168 1120 R0 -sn=1
+select figure at 1416 944 8 -branches -sn=1
+select figure at 1416 944 8 -branches -sn=1
+select figure at 1416 944 8 -branches -all -sn=1
