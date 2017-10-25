@@ -58,18 +58,53 @@
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="SignExtender_summary.xml"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="SignExtender_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SignExtender_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SignalExtTest_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1508891143" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1508891143">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891165" xil_pn:in_ck="-5081749048885501881" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="SignExtender.v"/>
+      <outfile xil_pn:name="SignalExtTest.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891165" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1198329923562080417" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891165" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2530326971680436575" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891165" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3680897803912243247" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891165" xil_pn:in_ck="-5081749048885501881" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="SignExtender.v"/>
+      <outfile xil_pn:name="SignalExtTest.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1508891168" xil_pn:in_ck="-5081749048885501881" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4056586522780472218" xil_pn:start_ts="1508891165">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
     <transform xil_pn:end_ts="1508731881" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1508731881">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -98,12 +133,10 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1508733952" xil_pn:in_ck="8042240482290229940" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-7985433857126803717" xil_pn:start_ts="1508733937">
+    <transform xil_pn:end_ts="1508890962" xil_pn:in_ck="8042240482290229940" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-7985433857126803717" xil_pn:start_ts="1508890954">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="SignExtender.lso"/>
       <outfile xil_pn:name="SignExtender.ngc"/>
@@ -124,6 +157,8 @@
     <transform xil_pn:end_ts="1508734016" xil_pn:in_ck="-4203549797976618154" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5092413610831847218" xil_pn:start_ts="1508734003">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="SignExtender.bld"/>
       <outfile xil_pn:name="SignExtender.ngd"/>
       <outfile xil_pn:name="SignExtender_ngdbuild.xrpt"/>
@@ -134,6 +169,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SignExtender.pcf"/>
       <outfile xil_pn:name="SignExtender_map.map"/>
       <outfile xil_pn:name="SignExtender_map.mrp"/>
@@ -147,6 +183,7 @@
     <transform xil_pn:end_ts="1508734058" xil_pn:in_ck="7032003274464620016" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-3872219738485705569" xil_pn:start_ts="1508734028">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SignExtender.ncd"/>
       <outfile xil_pn:name="SignExtender.pad"/>
       <outfile xil_pn:name="SignExtender.par"/>
@@ -161,6 +198,7 @@
     <transform xil_pn:end_ts="1508734058" xil_pn:in_ck="-4203549797976618285" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1508734053">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="SignExtender.twr"/>
       <outfile xil_pn:name="SignExtender.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

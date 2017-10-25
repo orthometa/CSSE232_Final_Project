@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/lih2/Documents/GitHub/CSSE232_Final_Project/SignExtend/SignalExtTest_isim_beh.exe" -prj "C:/Users/lih2/Documents/GitHub/CSSE232_Final_Project/SignExtend/SignalExtTest_beh.prj" "work.SignalExtTest" "work.glbl" 
